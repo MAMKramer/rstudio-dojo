@@ -1,6 +1,7 @@
-# 🥋 RStudio Dojo
+# 🥋 MAMK's RStudio Dojo
 
 Welcome to my RStudio Dojo! This repository is a dedicated space for practicing data science techniques, honing R programming skills, and experimenting with new packages.
+My background is in Human-Computer Interaction (HCI) and Health User Experience (HUX).  However, I am expanding my skill sets by acquiring Data Science knowledge through learning "R" for statistical analysis.
 
 ## 📌 Project Overview
 The goal of this "Dojo" is to document my journey through the R ecosystem. It contains scripts, exploratory data analysis (EDA), and practice models.
