@@ -1,0 +1,52 @@
+cheat_sheet_content = """# 🥋 RStudio Dojo: Fundamentals Cheat Sheet
+
+This cheat sheet summarizes the key R concepts and data analysis steps performed during our session using the `hw1_data.csv` dataset.
+
+## 1. Core Atomic Data Types
+In R, all elements in a vector must be of the same class. If mixed, R performs **automatic coercion**.
+
+* **Logical**: `TRUE`, `FALSE`, `NA`
+* **Numeric (Double)**: Default for numbers (e.g., `4`, `20.09`)
+* **Integer**: Whole numbers (e.g., `4L`)
+* **Character**: Text strings (e.g., `"a"`, `"setosa"`)
+* **Coercion Order**: Logical $\\rightarrow$ Integer $\\rightarrow$ Numeric $\\rightarrow$ Character
+
+## 2. Essential Data Frame Operations
+Used for inspecting the `hw1_data.csv` dataset:
+
+| Task | R Command | Result in `hw1_data` |
+| :--- | :--- | :--- |
+| **Count Rows** | `nrow(df)` | 153 |
+| **First Rows** | `head(df, 2)` | Rows 1 & 2 |
+| **Last Rows** | `tail(df, 2)` | Rows 152 & 153 |
+| **Specific Value** | `df[47, "Ozone"]` | 21 |
+| **Count Missing** | `sum(is.na(df$Ozone))` | 37 |
+
+## 3. Logical Filtering & Subsetting
+* **Single Condition**: `subset(data, Month == 6)`
+* **Multiple Conditions**: `subset(data, Ozone > 31 & Temp > 90)`
+    * The mean **Solar.R** for this specific subset is **212.8**.
+* **Logical Assignment**: `x[x < 6] <- 0` (Sets all values less than 6 to zero).
+
+## 4. Summary Statistics
+Always use `na.rm = TRUE` when your data contains `NA` values.
+
+* **Mean Ozone**: `mean(data$Ozone, na.rm = TRUE)` $\\approx$ **42.13**
+* **Mean Temp (June)**: `mean(data$Temp[data$Month == 6])` = **79.1**
+* **Max Ozone (May)**: `max(data$Ozone[data$Month == 5], na.rm = TRUE)` = **115**
+
+## 5. Development & Environment
+* **R Origin**: Developed at the **University of Auckland** by Ross Ihaka and Robert Gentleman.
+* **Mobile Coding**: Use **Posit Cloud** or **Google Colab** (via `colab.to/r`) for a full IDE on Android/iOS.
+* **GitHub**: Use a **Personal Access Token (PAT)** for secure authentication from RStudio.
+
+---
+*Created for the RStudio Dojo*
+"""
+
+with open('R_Dojo_Cheat_Sheet.md', 'w') as f:
+    f.write(cheat_sheet_content)
+
+print("File 'R_Dojo_Cheat_Sheet.md' has been successfully created.")
+
+
